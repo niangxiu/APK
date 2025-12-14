@@ -1,9 +1,13 @@
 from __future__ import division
 import numpy as np
 from pdb import set_trace
+import jax.numpy as jnp
+
+def nanarray(shape, dtype=jnp.float32):
+    return jnp.full(shape, jnp.nan, dtype=dtype)
 
 
-def nanarray(shape):
+def npnanarray(shape):
     _ = np.empty(shape)
     _[:] = np.nan
     return _
